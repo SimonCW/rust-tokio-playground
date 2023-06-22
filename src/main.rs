@@ -17,16 +17,15 @@ async fn main() {
     // will print shortly after sync because much works has already be done in the background
     let io_res = io_task.await.unwrap();
     println!("{:?}: {}", start.elapsed(), io_res);
-
     println!("{:?}: I'm last 🦀", start.elapsed());
 }
 
 fn sync_func() -> String {
-    sleep(Duration::from_secs(2));
-    String::from("Sync Result")
+    sleep(Duration::from_millis(500));
+    return String::from("Sync Result");
 }
 
 async fn async_io_func() -> String {
-    sleep(Duration::from_secs(3));
+    sleep(Duration::from_millis(500));
     String::from("Async Result")
 }
