@@ -22,7 +22,7 @@ async fn main() {
 
 fn sync_func() -> String {
     sleep(Duration::from_millis(500));
-    return String::from("Sync Result");
+    String::from("Sync Result")
 }
 
 async fn async_io_func() -> String {
